@@ -85,22 +85,22 @@ $(document).ready(function() {
             <tbody>
                 @foreach ($superheros as $superhero)
                 <tr>
-                    <td>{{ $superhero->id }}</td>
-                    <td>{{ $superhero->name }}</td>
-                    <td>{{ $superhero->fullName }}</td>
-                    <td>{{ $superhero->strength }}</td>
-                    <td>{{ $superhero->speed }}</td>
-                    <td>{{ $superhero->durability }}</td>
-                    <td>{{ $superhero->power }}</td>
-                    <td>{{ $superhero->combat }}</td>
-                    <td>{{ $superhero->race }}</td>
-                    <td>{{ $superhero->heightM }}</td>
-                    <td>{{ $superhero->heightCm }}</td>
-                    <td>{{ $superhero->weightLb }}</td>
-                    <td>{{ $superhero->weightKg }}</td>
-                    <td>{{ $superhero->eyeColor }}</td>
-                    <td>{{ $superhero->hairColor }}</td>
-                    <td>{{ $superhero->publisher }}</td>
+                <td>@isset($superhero->id) {{ $superhero->id }} @endisset</td>
+                <td>@isset($superhero->name) {{ $superhero->name }} @endisset</td>
+                <td>@isset($superhero->fullName) {{ $superhero->fullName }} @endisset</td>
+                <td>@isset($superhero->strength) {{ $superhero->strength }} @endisset</td>
+                <td>@isset($superhero->speed) {{ $superhero->speed }} @endisset</td>
+                <td>@isset($superhero->durability) {{ $superhero->durability }} @endisset</td>
+                <td>@isset($superhero->power) {{ $superhero->power }} @endisset</td>
+                <td>@isset($superhero->combat) {{ $superhero->combat }} @endisset</td>
+                <td>@isset($superhero->race) {{ $superhero->race }} @endisset</td>
+                <td>@isset($superhero->heightM) {{ $superhero->heightM }} @endisset</td>
+                <td>@isset($superhero->heightCm) {{ $superhero->heightCm }} @endisset</td>
+                <td>@isset($superhero->weightLb) {{ $superhero->weightLb }} @endisset</td>
+                <td>@isset($superhero->weightKg) {{ $superhero->weightKg }} @endisset</td>
+                <td>@isset($superhero->eyeColor) {{ $superhero->eyeColor }} @endisset</td>
+                <td>@isset($superhero->hairColor) {{ $superhero->hairColor }} @endisset</td>
+                <td>@isset($superhero->publisher) {{ $superhero->publisher }} @endisset</td>
                 </tr>
                 @endforeach
             </tbody>
