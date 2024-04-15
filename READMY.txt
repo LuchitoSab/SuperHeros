@@ -1,0 +1,81 @@
+-documentacions
+
+proyecto superhero
+
+// PASOS QUE SEGUI PARA HACER EL DESARROLLO //
+
+configuracion de docker-compose.yml para levantar imagenes.
+Servicio nginx
+Php 
+Mysql
+
+dentro de la configuracion de laravel, node con la version mas reciente
+
+utilizar laravel para levantar el servidor
+
+entrar al sistema y levantar con php artisan server
+
+inicie mysql y adentro uso la db superhero
+
+php artisan users para activar los usuarios y la configuracion de las migraciones, etc
+
+Cree migracion para la tabla de superheros
+con los campos específicos
+
+instale laravel excel, maatwebsite-excel
+
+lo configure con los títulos especificados en el csv, porque considero que es mejor practica administrar bien los datos y aceptar los que necesitas
+
+luego de hacer la importacion muestro los datos en el home pidiendolos con ORM, con una tabla básica usando boostrap a la vista de home, la ruta ejecuta el metodo index y se muestran.
+
+Agregar buscador, donde se puede buscar por “id” o %“name”%
+con un boton de limpiar formulario
+
+agregue paginación con jQuery, sacado de un documento de internet. lo corro con npm run watch y que se guarde bien.
+
+luego un boton para mostrar la paginacion en formato json para hacer la api resource, dato: manejar la paginacion se hace por get.
+
+EJ: json?page=2
+
+esto lo configuro desde api.php por el uso de sanctum que generalmente sirve para mayor seguridad a la hora de manejar datos json y jugar con la autenticacion pero no tengo tan claro este tema
+
+por lo tanto lo podria hacer desde la rutas web.php y hacer la misma ejecucion pero agregando el construct con middleware(‘auth’)
+verificando el login que hice desde que entre al sitio.
+
+Agregue un boton encima de la tabla para ordenar, aplicando jQuery para hacer el dropdown, tuve problemas con las versiones de jquery y boostrap, decidi no darle tanto importancia y hacerlo rápido para concentrarme en el back
+Este boton ordena por Id Desc, la tabla ya lo ordena ASC
+Por nombre, siguiendo el abcedario y por power , combat y speed mas altos (DESC) 
+
+
+
+
+// INICIAR EL PROYECTO
+
+git clone al repositorio
+
+una vez adentro en la terminal ejecutar composer install
+
+pasamos el archivo .env que lo envio por email
+
+levantamos docker docker-compose-yml up -d —build
+
+entramos a mysql -u root -p luciano
+
+creamos la database superhero
+
+aplicamos las migraciones php artisan migrate
+
+en mysql
+use superhero
+
+hacemos un php artisan serve
+
+entramos a la direccion que nos tire http://127.0.0.1:8001/ 
+
+nos registramos
+
+no nos va a mostrar ningun registro. vamos al boton de importar superhéroes
+
+seleccionamos el archivo .csv
+
+y listo, podes ver todas las funcionalidades.
