@@ -1,0 +1,29 @@
+version: '3'
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - php
+
+  php:
+    image: php:8.3-fpm
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:latest
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "3306:3306"
+    volumes:
+      - /var/lib/docker/volumes/luchosistema_mysql_data/_data
